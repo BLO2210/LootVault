@@ -11,7 +11,7 @@ function MovieSearch() {
 
     const fetchMovies = async () => {
         try {
-            const response = await fetch(`https://www.omdbapi.com/?s=${search}&apikey=`);
+            const response = await fetch(`https://www.omdbapi.com/?s=${search}&apikey=`)
             const result = await response.json();
             setMovies(result.Search);
         } catch (error) {
