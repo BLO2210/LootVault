@@ -12,8 +12,7 @@ function Login(props) {
     //defining dispatch
     const dispatch = useDispatch()
     
-    const authStuff = useSelector(state => state.auth)
-    console.log(authStuff)
+    const isAuthenticated = useSelector(state => state.auth)
 
     const [user, setUser] = useState({})
     const [errorMessage, setErrorMessage] = useState('')
@@ -39,6 +38,8 @@ function Login(props) {
         const result = await response.json()
         if(result.success) {
             localStorage.setItem('jwtToken', result.token)
+            localStorage.setItem('userId', result.userId)
+            // localStorage.setItem(user.userId)
             dispatch(authActions.login(result.token))
             //fix the navigation below to redirect user to homepage
             navigate('/home')

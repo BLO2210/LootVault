@@ -10,7 +10,7 @@ function ProtectedRoute(props) {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     
-    const authStuff = useSelector(state => state.auth)
+    const isAuthenticated = useSelector(state => state.auth)
 
     useEffect(() => {
 
