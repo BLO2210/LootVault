@@ -1,0 +1,76 @@
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .movie-item {
+    flex: 0 0 16%; /* Specify a fixed width for each item */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #828600; /* Updated border color to a shade of yellow (#828600) */
+    border-radius: 5px;
+    display: flex; /* Add this to align the content vertically */
+    flex-direction: column; /* Add this to stack the content vertically */
+  }
+  
+  .movie-item img {
+    width: 100%;
+    height: 100%; /* Set the height to 100% */
+    object-fit: cover; /* Maintain aspect ratio of images and fill the container */
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .movie-item b {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #ececec; /* Updated text color to yellow (#fae904) */
+  }
+  
+  .movie-item button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .movie-item button:hover {
+    background-color: #333;
+    border: 1px solid turquoise;
+  }
+  
+  .searchbar {
+    margin-bottom: 50px; /* Add some spacing below the search bar */
+  }
+  
+  .search-bar-shifted {
+    margin-top: -50px; /* Adjust the margin to shift the search bar up */
+  }
+  
+ .h1 {
+    font-size: small;
+ }
+  
+ body {
+    background-color: #0b111ca7;
+ }
+  
+ .own-button {
+    margin-top: auto;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

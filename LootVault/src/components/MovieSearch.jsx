@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"
 //must create a slice for the list below
 import { addMovie } from "../store/store";
+import '../css/movies.css'
 
 function MovieSearch() {
 
     const [movies, setMovies] = useState([])
-    const [search, setSearch] = useState ('')
+    const [search, setSearch] = useState('')
     const [selectedMovies, setSelectedMovies] = useState([]);
 
 
@@ -27,19 +28,19 @@ function MovieSearch() {
         }
     }
 
-  
-    
+
+
 
     const movieItems = movies ? movies.map(movie => (
-        <li key={movie.imdbID}>
+        <li key={movie.imdbID} className="movie-item">
             <img src={movie.Poster} alt={movie.Title} />
             <b>{movie.Title}</b>
             {isAuthenticated && (
-                <button name = "selectedItem" onClick = {() => handleAddMovie(movie)}>I own this!</button>
+                <button class = "own-button" name="selectedItem" onClick={() => handleAddMovie(movie)}>I own this!</button>
             )}
         </li>
     )) : '';
-    
+
 
     const handleSearch = (e) => {
         const search = e.target.value
@@ -57,22 +58,22 @@ function MovieSearch() {
 
     const handleAddMovie = async (movie) => {
         console.log(movie)
-        const userId = localStorage.getItem("userId")  ; // Replace with the current user's ID
+        const userId = localStorage.getItem("userId"); // Replace with the current user's ID
         try {
             console.log(`http://localhost:8080/${userId}/addMovies`);
-          const response = await fetch(`http://localhost:8080/${userId}/addMovies`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ movie: [movie.Poster, movie.Title] }),
-          });
-          const result = await response.json();
-          console.log(result);
+            const response = await fetch(`http://localhost:8080/${userId}/addMovies`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ movie: [movie.Poster, movie.Title] }),
+            });
+            const result = await response.json();
+            console.log(result);
         } catch (error) {
-          console.error(error);
+            console.error(error);
         }
-      };
+    };
 
     // const handleSelect = (movie) => {
     //     const setSelectedMovies((prevSelectedMovies) => {
@@ -85,12 +86,15 @@ function MovieSearch() {
 
     return (
         <>
-        <input type = "text" name = "Title" onChange = {handleSearch} placeholder = "Title"/>
-        <button onClick={handleSubmit}>Search</button>
-        <ul>
-        {movieItems}
-        </ul>
+            <div className= "searchbar">
+                <input type="text" name="Title" onChange={handleSearch} placeholder="Title" />
+                <button onClick={handleSubmit}>Search</button>
+            </div>
+            <ul className="movie-list">
+                {movieItems}
+            </ul>
         </>
+
     )
 }
 

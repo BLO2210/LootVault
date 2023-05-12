@@ -6,8 +6,10 @@ import './App.css'
 import {useSelector, useDispatch} from 'react-redux'
 
 //import componenets here
+import Navbar from './components/Navbar'
 import MovieSearch from './components/MovieSearch'
 import Login from './components/Login'
+import ViewLists from './components/viewLists'
 
 function App() {
   const [count, setCount] = useState(0)

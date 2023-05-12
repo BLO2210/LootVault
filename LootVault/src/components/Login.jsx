@@ -49,9 +49,31 @@ function Login(props) {
     }
 
 
+    // const handleRegister = async () => {
+
+    //     const response = await fetch ('http://localhost:8080/register', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify(user)
+    //     })
+    //     const result = await response.json()
+    //     if(result.success) {
+    //         localStorage.setItem('jwtToken', result.token)
+    //         localStorage.setItem('userId', result.userId)
+    //         // localStorage.setItem(user.userId)
+    //         dispatch(authActions.login(result.token))
+    //         //fix the navigation below to redirect user to homepage
+    //         navigate('/home')
+    //     } else {
+    //         setErrorMessage(result.message)
+    //     }
+    // }
+
     return (
         <>
-        <h1>Please Log in</h1>
+        <h1>Log in</h1>
         <input type = "text" name = "username" placeholder = "Username" onChange={handleUserInfo}/>
         <input type = "password" name = "password" placeholder = "Password" onChange={handleUserInfo}/>
         <button onClick={handleLogin}>Log in</button>

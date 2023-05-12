@@ -1,0 +1,99 @@
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: -5px; /* Add negative margin to create spacing between movie items */
+}
+
+.movie-item {
+  flex: 0 0 calc(14.25% - 17.5px); /* Decrease the width percentage */
+  margin-bottom: 25px; /* Decrease the margin-bottom value */
+  padding: 17.5px; /* Decrease the padding value */
+  border: 1px solid #fae904;
+  border-radius: 8.5px; /* Decrease the border-radius value */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 17.5px 12.5px rgba(3, 236, 182, 0.1); /* Decrease the box shadow values */
+}
+
+.movie-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 212.5px; /* Decrease the max-height value */
+  border-radius: 8.5px; /* Decrease the border-radius value */
+  margin-bottom: 12.5px; /* Decrease the margin-bottom value */
+}
+
+.movie-item b {
+  font-weight: bold;
+  font-size: 17.3px; /* Decrease the font-size value */
+  margin-bottom: 8.5px; /* Decrease the margin-bottom value */
+  border: none;
+  text-decoration: underline;
+}
+
+.movie-item__label {
+  margin-bottom: 8.5px; /* Decrease the margin-bottom value */
+}
+
+.movie-item__checkbox {
+  margin: 5px;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .movie-list {
+    justify-content: center;
+    margin: -5px; /* Add negative margin to create spacing between movie items */
+  }
+
+  .movie-item:nth-last-child(-n+3) {
+    margin-bottom: 17px; /* Adjust the margin-bottom value for the last 3 items */
+  }
+}
+
+body {
+  font-size: medium;
+}
+
+/* New Colors */
+
+.movie-item {
+  border-color: #828600;
+  box-shadow: 0 17.5px 12.5px rgba(0, 128, 128, 0.1);
+}
+
+.movie-item b {
+  text-decoration-color: #fae904;
+}
+
+.movie-item__checkbox {
+  color: #000;
+}
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
