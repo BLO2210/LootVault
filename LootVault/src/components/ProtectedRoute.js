@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch} from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import { authActions } from "../store/store";
 
@@ -9,12 +9,12 @@ function ProtectedRoute(props) {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    
+
     const isAuthenticated = useSelector(state => state.auth)
 
     useEffect(() => {
 
-        if(!props.isAuth) {
+        if (!props.isAuth) {
             navigate('/login')
         }
     })

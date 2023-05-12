@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux"
-//must create a slice for the list below
 import { addMovie } from "../store/store";
 import '../css/movies.css'
 
@@ -36,7 +35,7 @@ function MovieSearch() {
             <img src={movie.Poster} alt={movie.Title} />
             <b>{movie.Title}</b>
             {isAuthenticated && (
-                <button class = "own-button" name="selectedItem" onClick={() => handleAddMovie(movie)}>I own this!</button>
+                <button class="own-button" name="selectedItem" onClick={() => handleAddMovie(movie)}>I own this!</button>
             )}
         </li>
     )) : '';
@@ -51,14 +50,9 @@ function MovieSearch() {
         fetchMovies()
     }
 
-    // const handleAddMovie =  async (movie) => {
-    //     setSelectedMovies([...selectedMovies, movie])
-    //     // dispatch(addMovie(movie))
-    // }
-
     const handleAddMovie = async (movie) => {
         console.log(movie)
-        const userId = localStorage.getItem("userId"); // Replace with the current user's ID
+        const userId = localStorage.getItem("userId");
         try {
             console.log(`http://localhost:8080/${userId}/addMovies`);
             const response = await fetch(`http://localhost:8080/${userId}/addMovies`, {
@@ -75,18 +69,10 @@ function MovieSearch() {
         }
     };
 
-    // const handleSelect = (movie) => {
-    //     const setSelectedMovies((prevSelectedMovies) => {
-    //         const isSelected = prevSelectedMovies.some((m) => m.imdbID === movie.imdbID)
-    //         return isSelected
-    //         ? prevSelectedMovies.filter((m) => m.imdbID !== movie.imdbID)
-    //         : [...prevSelectedMovies, movie]
-    //     })
-    // }
 
     return (
         <>
-            <div className= "searchbar">
+            <div className="searchbar">
                 <input type="text" name="Title" onChange={handleSearch} placeholder="Title" />
                 <button onClick={handleSubmit}>Search</button>
             </div>

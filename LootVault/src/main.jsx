@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-//import components below
 import App from './App.jsx'
 import Navbar from './components/Navbar.jsx'
 import Login from './components/Login.jsx'
@@ -16,7 +15,6 @@ import ProtectedRoute from './components/ProtectedRoute.js'
 
 const token = localStorage.getItem('jwtToken')
 if(token) {
-  // dispatch an action to update the isAuthenticated property in global state 
   store.dispatch({type: 'ON_LOGIN', payload: token})
 }
 

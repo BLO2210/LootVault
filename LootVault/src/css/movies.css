@@ -7,19 +7,19 @@
   }
   
   .movie-item {
-    flex: 0 0 16%; /* Specify a fixed width for each item */
+    flex: 0 0 16%; 
     margin-bottom: 20px;
     padding: 10px;
-    border: 1px solid #828600; /* Updated border color to a shade of yellow (#828600) */
+    border: 1px solid #828600; 
     border-radius: 5px;
-    display: flex; /* Add this to align the content vertically */
-    flex-direction: column; /* Add this to stack the content vertically */
+    display: flex; 
+    flex-direction: column; 
   }
   
   .movie-item img {
     width: 100%;
-    height: 100%; /* Set the height to 100% */
-    object-fit: cover; /* Maintain aspect ratio of images and fill the container */
+    height: 100%; 
+    object-fit: cover; 
     border-radius: 5px;
     margin-bottom: 10px;
   }
@@ -28,7 +28,7 @@
     display: block;
     font-size: 16px;
     margin-bottom: 5px;
-    color: #ececec; /* Updated text color to yellow (#fae904) */
+    color: #ececec; 
   }
   
   .movie-item button {
@@ -46,11 +46,11 @@
   }
   
   .searchbar {
-    margin-bottom: 50px; /* Add some spacing below the search bar */
+    margin-bottom: 50px; 
   }
   
   .search-bar-shifted {
-    margin-top: -50px; /* Adjust the margin to shift the search bar up */
+    margin-top: -50px; 
   }
   
  .h1 {
